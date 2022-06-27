@@ -1,0 +1,8 @@
+<h1>Homepage</h1>
+<% if user_signed_in? %>
+   <p>Bonjour <%= current_user.username %>, vous êtes connecté.</p> 
+<% else %>
+    <p>Vous n'êtes connecté.</p> 
+<% end %>
+
+
