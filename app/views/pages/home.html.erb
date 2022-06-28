@@ -1,8 +1,10 @@
 <h1>Homepage</h1>
-<% if user_signed_in? %>
-   <p>Bonjour <%= current_user.username %>, vous êtes connecté.</p> 
+<% if user_signed_in?%>
+    <% if current_user.username != '' %>
+        <p>Bonjour <%= current_user.username %>, vous êtes connecté.</p>
+    <% else %>
+        <p>Bonjour <%= current_user.email %>, vous êtes connecté.</p>
+    <% end %>
 <% else %>
-    <p>Vous n'êtes connecté.</p> 
+    <p>Vous n'êtes connecté.</p>
 <% end %>
-
-
