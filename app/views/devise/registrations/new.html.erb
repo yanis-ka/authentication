@@ -1,28 +1,34 @@
-<h2>Sign up</h2>
+<div class="container mt-3">
+  <div class="sign-form shadow p-4 mb-5 bg-body rounded">
+    <main class="form-signin w-100 m-auto"></main>
+    <h2 class="h3 mb-3 fw-normal text-center">Sign up</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :email,
+    <div class="form-inputs">
+      <%= f.input :email,
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "email" }%>
-    <%= f.input :username,
+      <%= f.input :username,
                 required: true,
                 input_html: { autocomplete: "username" }%>
-    <%= f.input :password,
+      <%= f.input :password,
                 required: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                 input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
+      <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
-  </div>
+    </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
+    <div class="form-actions">
+      <%= f.button :submit, "Sign up", class: 'w-100 btn btn-lg btn-primary' %>
+    </div>
+    <% end %>
+    </main>
 
-<%= render "devise/shared/links" %>
+    <%= render "devise/shared/links" %>
+  </div>
+</div>
